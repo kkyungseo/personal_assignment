@@ -17,8 +17,11 @@ public class Per01 {
 				lottoNum.add(randomNum);
 			}
 			
-			// 02. bonusNum 생성 (1부터 45까지의 범위)
-			int bonusNum = (int) (Math.random() * 45) + 1; 		
+			// 02. bonusNum 생성 (1부터 45까지의 범위 && lottoNum과 겹치지 않게 설정)
+			int bonusNum;
+            		do {
+               			bonusNum = (int) (Math.random() * 45) + 1;
+            		} while (lottoNum.contains(bonusNum));
 
 			System.out.println("Lotto Set " + ( i + 1 ) + ": " + lottoNum + " + Bonus: " + bonusNum);
 		}
